@@ -22,12 +22,12 @@ CONCURRENT_REQUESTS = 30
 # don't filter anything, also can set dont_filter=True in Request objects
 DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
 HTTPCACHE_ENABLED = False
-GFW_PROXY = 'http://127.0.0.1:8123'
+GFW_PROXY = 'http://192.168.1.232:8123'
 
 # splash settings.If you use docker-compose,SPLASH_URL = 'http://splash:8050'
-SPLASH_URL = 'http://127.0.0.1:8050'
+SPLASH_URL = 'http://192.168.1.232:8050'
 if os.getenv("ISDOCKER"):
-    SPLASH_URL = 'http://splash:8050'
+    SPLASH_URL = 'http://192.168.1.232:8050'
 
 # extension settings
 RETRY_ENABLED = False
@@ -51,7 +51,7 @@ SPIDER_MIDDLEWARES = {
 
 # scrapy log settings
 LOG_LEVEL = 'DEBUG'
-# LOG_FILE = 'logs/haipproxy.log'
+LOG_FILE = 'logs/haipproxy.log'
 
 
 #####################################################################
@@ -60,9 +60,9 @@ LOG_LEVEL = 'DEBUG'
 
 # redis settings.If you use docker-compose, REDIS_HOST = 'redis'
 # if some value is empty, set like this: key = ''
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = '192.168.1.232'
 if os.getenv("ISDOCKER"):
-    REDIS_HOST = 'redis'
+    REDIS_HOST = '192.168.1.232'
 REDIS_PORT = 6379
 REDIS_PASSWORD = '123456'
 REDIS_DB = 0
